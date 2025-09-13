@@ -1,0 +1,84 @@
+/* Reading.css */
+
+.reading-container {
+  padding: 5rem 2rem;
+  color: #333;
+  text-align: center;
+}
+
+.reading-title {
+  font-size: 2.5rem;
+  color: #e50914;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  animation: slideDown 0.8s ease-in-out;
+}
+
+.reading-intro {
+  font-size: 1.1rem;
+  color:white;
+  margin-bottom: 2rem;
+}
+
+.update-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.update-card {
+  background: #fff;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(229, 9, 20, 0.3);
+  text-align: left;
+  color: #333;
+}
+
+.update-card h3 {
+  color: #e50914;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.update-card p {
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+}
+
+.website-link {
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 4px solid #e50914;
+}
+
+.website-link p {
+  margin: 0 0 0.5rem 0;
+  font-weight: bold;
+  color: #e50914;
+}
+
+.website-link a {
+  color: #007bff;
+  text-decoration: none;
+  word-break: break-all;
+}
+
+.website-link a:hover {
+  text-decoration: underline;
+}
+
+
+
+
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
