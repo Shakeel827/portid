@@ -14,7 +14,7 @@ const WorkPermit: React.FC = () => {
       <div className="work-permit-card">
         <h2 className="work-permit-headline">🎓 Education Status</h2>
         <p className="work-permit-summary">
-          I'm currently a <strong>{workPermitData.visaStatus}</strong> holder 🛂, pursuing my Bachelor's degree in Cyber Security! 🇮🇳 My studies continue until <strong>{workPermitData.expiryDate.toLocaleDateString()}</strong> 📅, giving me the opportunity to build valuable experience and grow my career in cybersecurity and web development. 🌟
+          “I am a proud citizen of India 🇮🇳, with a Bachelor's degree in Cyber Security (completed in 2025). 🛡️ I am open to working all across India, building valuable experience and growing my career in cybersecurity and web development.. 🌟
         </p>
         <p className="additional-info">{workPermitData.additionalInfo}</p>
       </div>
