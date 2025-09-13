@@ -3,13 +3,13 @@ import './Recommendations.css';
 
 const Recommendations: React.FC = () => {
   return (
-    <div className='timeline-container'>
+    <div className='timeline-containe'>
       <div className="recommendation-card">
         <div className="recommendation-header">
           <img src="https://picsum.photos/seed/professional/150/150" alt="Professional Reference" className="profile-pic" />
           <div>
-            <h3>Professional Reference</h3>
-            <p>Industry Professional</p>
+            <h3>Fardeen</h3>
+            <p>IT Professiona</p>
             <p className="date">2024</p>
           </div>
         </div>
