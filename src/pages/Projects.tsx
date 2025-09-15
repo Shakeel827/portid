@@ -1,6 +1,6 @@
 import React from 'react';
 import './Projects.css';
-import { FaReact, FaNodeJs, FaDatabase, FaPython, FaHtml5, FaCss3Alt, FaJs, FaGithub } from 'react-icons/fa';
+import { FaReact, FaNodeJs, FaDatabase, FaPython, FaHtml5, FaCss3Alt, FaJs, FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import { SiFigma } from 'react-icons/si';
 
 const techIcons: { [key: string]: JSX.Element } = {
@@ -22,8 +22,10 @@ const techIcons: { [key: string]: JSX.Element } = {
 const projects = [
   {
     title: "PandascanFlow Web Vulnerability Scanner",
-    description: "Real-time security insights with continuous website vulnerability scanning for XSS, SQLi, and open ports. Includes subdomain enumeration, directory scanning, GeoIP lookup, and AI-powered reporting for quick analysis and decision making.",
+    description: "Real-time security insights with continuous website vulnerability scanning for XSS, SQLi, and open ports. Includes subdomain enumeration, directory scanning, GeoIP lookup, and AI-powered reporting.",
     techUsed: "Python, Security, AI, Web Development",
+    liveLink: "https://pandascanpro-4.onrender.com",
+    githubLink: "https://github.com/Shakeel827",
     image: { 
       url: "https://picsum.photos/seed/pandascan/400/300",
       logo: "/64515607-b228-4347-b948-896ce770e8d3.svg",
@@ -32,25 +34,30 @@ const projects = [
   },
   {
     title: "ResumeFlow AI Resume & Portfolio Builder",
-    description: "AI-powered resume creation that automatically generates ATS-friendly resumes and personalized portfolios using LinkedIn or form-based inputs. Provides AI-driven insights on resume strength with tailoring suggestions to improve job success rates.",
+    description: "AI-powered resume creation that automatically generates ATS-friendly resumes and personalized portfolios using LinkedIn or form-based inputs.",
     techUsed: "React, Node.js, AI, JavaScript",
+    liveLink: "https://resumeflow.pandascanpros.in",
+    githubLink: "https://github.com/Shakeel827",
     image: { url: "https://picsum.photos/seed/resumeflow/400/300" }
   },
   {
     title: "AI-Powered Knowledge Assistant",
-    description: "Intelligent AI assistant that solves doubts and provides insightful answers. Built with advanced natural language processing capabilities for accurate and contextual responses to user queries.",
+    description: "Intelligent AI assistant that solves doubts and provides insightful answers with advanced natural language processing capabilities.",
     techUsed: "Python, AI, Machine Learning, JavaScript",
+    liveLink: "https://pandanexus.pandascanpros.in",
+    githubLink: "https://github.com/Shakeel827",
     image: { url: "https://picsum.photos/seed/aiassistant/400/300" }
   },
   {
     title: "Patient Diary App",
-    description: "A case study of the Patient Diary App designed for healthcare professionals. The app simplifies patient management, allowing doctors to store prescriptions, medical reports, and schedule appointments.",
+    description: "A case study of the Patient Diary App designed for healthcare professionals to manage patient records and appointments.",
     techUsed: "UI/UX, Figma, React",
+    caseStudyLink: "https://www.behance.net/shakeelsk1",
     image: { url: "https://picsum.photos/seed/patientdiary/400/300" }
   },
   {
     title: "Finsafe Platform",
-    description: "A dynamic platform offering financial education courses to enhance financial literacy and investment skills. Courses cover personal finance, investing strategies, and risk management.",
+    description: "A dynamic platform offering financial education courses to enhance financial literacy and investment skills.",
     techUsed: "React, Node.js, UI/UX, JavaScript",
     image: { url: "https://picsum.photos/seed/finsafe/400/300" }
   },
@@ -91,6 +98,23 @@ const Projects: React.FC = () => {
                     {techIcons[tech] || "🔧"} {tech}
                   </span>
                 ))}
+              </div>
+              <div className="project-links">
+                {project.liveLink && (
+                  <a href={project.liveLink} target="_blank" rel="noopener noreferrer">
+                    <FaExternalLinkAlt /> Live Demo
+                  </a>
+                )}
+                {project.githubLink && (
+                  <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
+                    <FaGithub /> Code
+                  </a>
+                )}
+                {project.caseStudyLink && (
+                  <a href={project.caseStudyLink} target="_blank" rel="noopener noreferrer">
+                    <SiFigma /> Case Study
+                  </a>
+                )}
               </div>
             </div>
           </div>
