@@ -1,37 +1,57 @@
 .projects-container {
   padding: 120px 20px;
-  background-color: #141414;
+  background: linear-gradient(135deg, #0c0c0c 0%, #1a1a1a 100%);
   color: #fff;
+  min-height: 100vh;
 }
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
 .project-card {
-  background: #1e1e1e;
-  border-radius: 12px;
+  background: linear-gradient(145deg, #1a1a1a, #242424);
+  border-radius: 16px;
   overflow: hidden;
-  box-shadow: 0 6px 15px rgba(160, 16, 16, 0.6); /* Base shadow */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
   opacity: 0;
   animation: fadeInUp 0.5s forwards ease-in-out;
   animation-delay: var(--delay);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  border: 1px solid rgba(229, 9, 20, 0.1);
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #e50914, #ff5722);
+  opacity: 0;
+  transition: opacity 0.3s ease;
 }
 
 .project-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 20px rgba(244, 0, 13, 0.6); /* Netflix shadow */
-  cursor: pointer;
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 15px 35px rgba(229, 9, 20, 0.4);
+  border-color: rgba(229, 9, 20, 0.3);
+}
+
+.project-card:hover::before {
+  opacity: 1;
 }
 
 .project-image-container {
   position: relative;
   width: 100%;
-  height: 200px;
+  height: 220px;
   overflow: hidden;
 }
 
@@ -39,8 +59,11 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-bottom: 2px solid #e50914;
-  transition: transform 0.3s ease;
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover .project-image {
+  transform: scale(1.08);
 }
 
 .project-logo {
@@ -48,73 +71,178 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 60%;
+  width: 50%;
   height: auto;
-  max-height: 60%;
+  max-height: 50%;
   object-fit: contain;
   z-index: 2;
-  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.8));
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 8px;
-  padding: 10px;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.8));
+  transition: all 0.4s ease;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9));
+  border-radius: 12px;
+  padding: 12px;
   box-sizing: border-box;
+  backdrop-filter: blur(5px);
 }
 
 .project-card:hover .project-logo {
-  transform: translate(-50%, -50%) scale(1.08);
-  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 1));
-  background-color: rgba(0, 0, 0, 0.7);
-}
-
-.project-card:hover .project-image {
-  transform: scale(1.05);
+  transform: translate(-50%, -50%) scale(1.1);
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 1));
 }
 
 .project-details {
-  padding: 20px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }
 
 .project-details h3 {
-  font-size: 1.2rem;
-  color: #e74e56;
-  margin-bottom: 10px;
-  color: #e50914;
+  font-size: 1.4rem;
+  color: #fff;
+  margin: 0;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  position: relative;
+  display: inline-block;
+}
+
+.project-details h3::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, #e50914, #ff5722);
+  border-radius: 3px;
 }
 
 .project-details p {
-  font-size: 0.8rem;
-  margin-bottom: 15px;
-  line-height: 1.2rem;
+  font-size: 0.95rem;
+  margin: 0;
+  line-height: 1.6;
+  color: #ccc;
 }
 
 .tech-used {
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
-  margin-top: 20px;
+  gap: 10px;
+  margin: 10px 0;
 }
 
 .tech-badge {
   display: inline-flex;
   align-items: center;
-  padding: 5px 10px;
-  border-radius: 12px;
-  background: #2c2c2c;
+  padding: 6px 12px;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #2a2a2a, #252525);
   color: #fff;
   font-size: 0.8rem;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .tech-badge:hover {
-  transform: scale(1.1);
-  background-color: #e50914;
+  transform: translateY(-2px);
+  background: linear-gradient(145deg, #e50914, #c40812);
+  box-shadow: 0 5px 15px rgba(229, 9, 20, 0.4);
   color: #fff;
-  box-shadow: 0 4px 10px rgba(229, 9, 20, 0.6); /* Netflix shadow */
 }
 
 .tech-badge svg {
-  margin-right: 5px;
-  font-size: 1.2rem;
+  margin-right: 6px;
+  font-size: 1rem;
+}
+
+.project-links {
+  display: flex;
+  gap: 12px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.project-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  color: white;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.project-links a:first-child {
+  background: linear-gradient(90deg, #e50914, #ff4081);
+}
+
+.project-links a:nth-child(2) {
+  background: linear-gradient(90deg, #6e5494, #8a63d2);
+}
+
+.project-links a:nth-child(3) {
+  background: linear-gradient(90deg, #ff3b00, #ff9500);
+}
+
+.project-links a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+}
+
+.project-links a:active {
+  transform: translateY(0);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  
+  .projects-container {
+    padding: 80px 15px;
+  }
+  
+  .project-details {
+    padding: 20px;
+  }
+  
+  .project-image-container {
+    height: 200px;
+  }
+}
+
+/* Loading shimmer effect for images */
+.project-image.shimmer {
+  background: linear-gradient(90deg, #2a2a2a 0%, #333 50%, #2a2a2a 100%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
 }
